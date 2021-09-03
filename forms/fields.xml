@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<form>
+    <fields name="params">
+        <fieldset addfieldpath="/administrator/components/com_fabrik/models/fields" name="plg-element-suggest" label="COM_FABRIK_OPTIONS">
+            <field name="suggest_conn_id"
+                   label="PLG_FABRIK_ELEMENT_SUGGEST_CONEXAO_LABEL"
+                   type="connections"/>
+
+            <field name="suggest_db_name"
+                   label="PLG_FABRIK_ELEMENT_SUGGEST_DBNAME_LABEL"
+                   observe="params_suggest_conn_id"
+                   key="name"
+                   type="tables"/>
+
+            <field name="suggest_status"
+                   label="PLG_FABRIK_ELEMENT_SUGGEST_STATUS_LABEL"
+                   description="PLG_FABRIK_ELEMENT_SUGGEST_STATUS_DESC"
+                   type="listfields"
+                   connection="params_suggest_conn_id"
+                   table="params_suggest_db_name"
+            />
+            <field name="suggest_master"
+                   label="PLG_FABRIK_ELEMENT_SUGGEST_MASTER_LABEL"
+                   description="PLG_FABRIK_ELEMENT_SUGGEST_MASTER_DESC"
+                   type="listfields"
+                   connection="params_suggest_conn_id"
+                   table="params_suggest_db_name"
+            />
+            <field name="suggest_contribuidor"
+                   label="PLG_FABRIK_ELEMENT_SUGGEST_CONTRIBUIDOR_LABEL"
+                   description="PLG_FABRIK_ELEMENT_SUGGEST_CONTRIBUIDOR_DESC"
+                   type="listfields"
+                   connection="params_suggest_conn_id"
+                   table="params_suggest_db_name"
+            />
+            <field name="suggest_user"
+                   label="PLG_FABRIK_ELEMENT_SUGGEST_USER_LABEL"
+                   description="PLG_FABRIK_ELEMENT_SUGGEST_USER_DESC"
+                   type="listfields"
+                   connection="params_suggest_conn_id"
+                   table="params_suggest_db_name"
+            />
+
+            <field name="suggest_disconsider_elements"
+                   type="fabrikmodalrepeat"
+                   icon="list"
+                   label="PLG_FABRIK_ELEMENT_SUGGEST_DESCONSIDER_ELEMENTS_LABEL"
+                   description="PLG_FABRIK_ELEMENT_SUGGEST_DESCONSIDER_ELEMENTS_DESC"
+            >
+                <fields name="params">
+                    <fieldset modal="true"
+                              name="suggest_disconsider_elements_modal"
+                              repeat="false">
+                        <field name="disconsider_element"
+                               label="PLG_FABRIK_ELEMENT_SUGGEST_DESCONSIDER_ELEMENTS_ELEMENT_LABEL"
+                               size="30"
+                               type="listfields"
+                               connection="params_suggest_conn_id"
+                               table="params_suggest_db_name"
+                        />
+                    </fieldset>
+                </fields>
+            </field>
+
+            <field name="suggest_list_name_review"
+                   label="PLG_FABRIK_ELEMENT_SUGGEST_LIST_NAME_REVIEW_LABEL"
+                   description="PLG_FABRIK_ELEMENT_SUGGEST_LIST_NAME_REVIEW_DESC"
+                   type="fabrikeditor"
+                   mode="php"
+            />
+            <field name="suggest_valor"
+                   label="PLG_FABRIK_ELEMENT_SUGGEST_VALOR_LABEL"
+                   description="PLG_FABRIK_ELEMENT_SUGGEST_VALOR_DESC"
+                   type="text"
+            />
+        </fieldset>
+
+        <fieldset addfieldpath="/administrator/components/com_fabrik/models/fields" name="plg-element-suggest-button" label="PLG_FABRIK_ELEMENT_SUGGEST_BUTTON">
+            <field name="suggest_button_porcentagem"
+                   label="PLG_FABRIK_ELEMENT_SUGGEST_BUTTON_PORCENTAGEM"
+                   type="text"
+            />
+
+            <field name="suggest_button_porcentagem_style"
+                   type="fabrikmodalrepeat"
+                   icon="list"
+                   label="PLG_FABRIK_ELEMENT_SUGGEST_BUTTON_PORCENTAGEM_STYLE"
+            >
+                <fields name="params">
+                    <fieldset modal="true"
+                              name="suggest_button_porcentagem_style_modal"
+                              repeat="false">
+                        <field name="suggest_button_porcentagem_from"
+                               label="PLG_FABRIK_ELEMENT_SUGGEST_BUTTON_PORCENTAGEM_FROM"
+                               type="number"
+                        />
+                        <field name="suggest_button_porcentagem_to"
+                               label="PLG_FABRIK_ELEMENT_SUGGEST_BUTTON_PORCENTAGEM_TO"
+                               type="number"
+                        />
+                        <field name="suggest_button_porcentagem_style_button"
+                               label="PLG_FABRIK_ELEMENT_SUGGEST_BUTTON_PORCENTAGEM_STYLE_BUTTON"
+                               type="list">
+                            <option value="btn-default">Default Button</option>
+                            <option value="btn-primary">Primary Button</option>
+                            <option value="btn-danger">Danger Button</option>
+                            <option value="btn-success">Success Button</option>
+                            <option value="btn-warning">Warning Button</option>
+                        </field>
+                    </fieldset>
+                </fields>
+            </field>
+            <!--<field name="suggest_button_porcentagem_style"
+                   label="PLG_FABRIK_ELEMENT_SUGGEST_BUTTON_PORCENTAGEM_STYLE"
+                   type="list">
+                <option value="btn-default">Default Button</option>
+                <option value="btn-primary">Primary Button</option>
+                <option value="btn-danger">Danger Button</option>
+                <option value="btn-success">Success Button</option>
+                <option value="btn-warning">Warning Button</option>
+            </field>-->
+
+            <field name="suggest_button_label"
+                   label="PLG_FABRIK_ELEMENT_SUGGEST_BUTTON_LABEL"
+                   type="text"
+            />
+            <field name="suggest_button_style"
+                   label="PLG_FABRIK_ELEMENT_SUGGEST_BUTTON_STYLE"
+                   type="list">
+                <option value="btn-default">Default Button</option>
+                <option value="btn-primary">Primary Button</option>
+                <option value="btn-danger">Danger Button</option>
+                <option value="btn-success">Success Button</option>
+                <option value="btn-warning">Warning Button</option>
+            </field>
+        </fieldset>
+    </fields>
+
+</form>
